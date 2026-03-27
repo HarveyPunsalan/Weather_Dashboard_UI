@@ -6,9 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A weather dashboard UI" />
     <meta name="keywords" content="Your Name" />
-    <title>weather-dashboard-ui</title>
+    <link rel="stylesheet" href="src/style.css">
+    <title>WeatherBoard</title>
   </head>
   <body>
+    <header>
+      <h1>WeatherBoard</h1>
+      <div id="clock"></div>
+      <button id="theme-toggle">Dark Mode</button>
+    </header>
+
+    <main>
+      <section id="search-section">
+        <label for="city-search">Search City</label>
+        <input type="text" id="city-search" placeholder="Search city...">
+      </section>
+
+      <section id="cards-container">
+        <!-- For Typescript Code -->
+      </section>
+
+      <div id="bottom-panel">
+        <section id="forecast-section">
+          <h2 id="forecast-title">Weekly Forecast</h2>
+          <table id="forecast-table">
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Day</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Condition</th>
+              </tr>
+            </thead>
+            <tbody id="forecast-body">
+              <!-- For Typescript Code -->
+            </tbody>
+
+          </table>
+        </section>
+
+        <div id="wind-indicator">
+          <h3>Wind Direction</h3>
+          <div id="wind-arrow">↑</div>
+        </div>
+
+      </div>
+    </main>
+
+
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
