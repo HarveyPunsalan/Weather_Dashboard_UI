@@ -1,1 +1,160 @@
+:root {
+  --bg: hsl(220, 15%, 10%);
+  --surface: hsl(220, 15%, 16%);
+  --text: hsl(220, 10%, 90%);
+  --accent: hsl(200, 80%, 55%);
+  --border: hsl(220, 15%, 25%);
+  --muted: hsl(220, 10%, 60%);
+}
 
+body.light-mode {
+  --bg: hsl(220, 20%, 97%);
+  --surface: hsl(0, 0%, 100%);
+  --text: hsl(220, 15%, 15%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-image: linear-gradient(to right, hsl(220, 15%, 20%), transparent);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#clock {
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#cards-container {
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.card {
+  flex: 1 1 220px;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.active {
+  border-color: var(--accent);
+  background-color: hsl(220, 15%, 22%);
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card .city-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card .temperature {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.card .condition,
+.card .humidity,
+.card .wind {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#bottom-panel {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#forecast-section {
+  order: 1;
+}
+
+#wind-indicator {
+  order: 2;
+}
+
+#wind-arrow {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+#forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#forecast-table td,
+#forecast-table th {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+}
+
+#forecast-table th {
+  background-color: hsl(220, 15%, 20%);
+  text-align: left;
+}
+
+#forecast-body td:first-child {
+  background-color: hsl(220, 15%, 22%);
+  font-weight: bold;
+  text-align: center;
+}
+
+.highlight-row {
+  background-color: hsl(200, 80%, 15%);
+}
+
+@media (min-width: 768px) {
+  #cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: stretch;
+    gap: 1rem;
+  }
+}
