@@ -11,6 +11,9 @@ body.light-mode {
   --bg: hsl(220, 20%, 97%);
   --surface: hsl(0, 0%, 100%);
   --text: hsl(220, 15%, 15%);
+  --accent: hsl(200, 80%, 45%);
+  --border: hsl(220, 15%, 80%);
+  --muted: hsl(220, 10%, 45%);
 }
 
 *, *::before, *::after {
@@ -24,6 +27,13 @@ body {
   background-color: var(--bg);
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 header {
